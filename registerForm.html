@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h2> Registration Form </h2>
+
+<div>
+
+    <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+        onload="if(submitted) {
+            const re = RegExp('(.*\/)')
+            console.log(re.exec(window.location.pathname)[0])
+            window.location = re.exec(window.location.pathname)[0] + 'pdf.html';
+        }">
+    </iframe>
+
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOpaoOLdKyUUc-xTlWjq5_ww_ZerM7NQwljavAz4ehpMPQxw/formResponse"
+        method="post" target="hidden_iframe" onsubmit="submitted=true;">
+    
+        <label>Email</label>
+
+        <input type="email"
+            class="quantumWizTextinputPaperinputInput exportInput"
+            jsname="YPqjbf"
+            autocomplete="off"
+            tabindex="0"
+            aria-label="Email"
+            aria-describedby="i.desc.908255338 i.err.908255338"
+            name="entry.1042885748"
+            value="" dir="auto" data-initial-dir="auto" data-initial-value="" aria-invalid="false">
+
+
+        <br>
+        <input type="submit" value="Submit" />
+
+    </form>
+
+    <br>
+    <br>
+
+</div>
+
+</body>
+</html>
