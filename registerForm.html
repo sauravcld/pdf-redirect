@@ -11,7 +11,6 @@
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
         onload="if(submitted) {
             const re = RegExp('(.*\/)')
-            console.log(re.exec(window.location.pathname)[0])
             window.location = re.exec(window.location.pathname)[0] + 'pdf.html';
         }">
     </iframe>
