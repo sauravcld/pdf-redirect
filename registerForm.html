@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-
 <html>
 <title>CloudCover Solutions</title>
 <head>
+<meta name="robots" content="noindex" />
     <script type="text/javascript">
     var submitted=false;
-
     function validateForm() {
         var phone = document.forms["register"]["entry.268339329"].value;
         if (phone != "") {
             const pat = new RegExp('^\\+[0-9]{3,5}[0-9]{4,14}');
             if (pat.exec(phone) == null) {
-                alert("Please enter valid phone no: start with +XX");
+                alert("Please enter a valid phone number starting with '+' followed by your country code and number.");
                 return false;
             }
         }
@@ -26,7 +25,6 @@
 		max-width:320px;
 		margin:0 auto;
 		background-color:#f8f9fa;
-
 	}
 	label {
 		text-transform:uppercase;
@@ -54,7 +52,6 @@
 	border-size:0px;
 	border-color:#f2f4f7;
 	}
-
 input[type=button], input[type=submit], input[type=reset] {
   background-color: #ff3366;
   border: none;
@@ -68,33 +65,37 @@ input[type=button], input[type=submit], input[type=reset] {
   letter-spacing:1px;
   cursor: pointer;
 }
-
 .logo {
 	text-align:center;
 	margin:0 auto;
 	margin-top:12px;
 	margin-bottom:12px;
 }
-
 .logo img {
 	margin:0 auto;
 	width:120px;
 }
-
 h2 {
 	text-align:center;
 }
-
+p {
+        font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 24px;
+}
+span {
+    font-size:8px;
+}
 </style>
 <body>
 	<div class="logo">
 		<img src="https://a.cldcvr.com/cldcvr/CLDCVR-RGB-Text-Black.png">
 	</div>
-
-    <h2> Registration Form </h2>
-    
+    <h2>Download our Data Lake Solution Brief</h2>
+    <p>Have a look at our AWS Data Lake Solution - We just need some information from you before you can download the file.</p>
     <div>
-
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
         onload="
             if(submitted) {
@@ -102,10 +103,8 @@ h2 {
                 window.location = re.exec(window.location.pathname)[0] + 'pdf.html';
         }">
     </iframe>
-
     <form name="register" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOpaoOLdKyUUc-xTlWjq5_ww_ZerM7NQwljavAz4ehpMPQxw/formResponse"
         method="post" target="hidden_iframe" onsubmit="return validateForm();">
-
         <label>Company Name</label>
         <input type="text"
             class="quantumWizTextinputPaperinputInput exportInput"
@@ -121,9 +120,7 @@ h2 {
             data-initial-dir="auto"
             data-initial-value=""
             aria-invalid="true">
-        
         <br>
-    
         <label>Email</label>
         <input type="email"
             class="quantumWizTextinputPaperinputInput exportInput"
@@ -139,9 +136,8 @@ h2 {
             data-initial-dir="auto"
             data-initial-value=""
             aria-invalid="true">
-        
         <br>
-        <label>Phone No</label>
+        <label>Phone No <span>OPTIONAL</span></label>
         <input type="text"
             class="quantumWizTextinputPaperinputInput exportInput"
             jsname="YPqjbf"
@@ -155,17 +151,11 @@ h2 {
             data-initial-dir="auto"
             data-initial-value=""
             aria-invalid="false">
-
-
         <br>
         <input class="btn" type="submit" value="Submit" />
-
     </form>
-
     <br>
     <br>
-
 </div>
-
 </body>
 </html>
