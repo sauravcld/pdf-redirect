@@ -3,10 +3,26 @@
 <title>CloudCover Solutions</title>
 <head>
 <meta name="robots" content="noindex" />
-    <script type="text/javascript">
-    var submitted=false;
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79993616-1"></script>
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-79993616-1');
+</script>
+<script type="text/javascript">
+    var submitted = false;
+    var checked = false;
+    function checkContact(checkbox){
+        if(checkbox.checked){
+            checked = true;
+            return
+        } 
+        checked = false;
+    }
     function validateForm() {
-        var phone = document.forms["register"]["entry.268339329"].value;
+        var phone = document.forms["register"]["entry.1014546229"].value;
         if (phone != "") {
             const pat = new RegExp('^\\+[0-9]{3,5}[0-9]{4,14}');
             if (pat.exec(phone) == null) {
@@ -14,44 +30,51 @@
                 return false;
             }
         }
+        if (checked) {
+            document.forms["register"]["entry.545882902"].value = "No"
+        } else {
+            document.forms["register"]["entry.545882902"].value = "Yes"
+        }
         submitted = true;
     }
-    </script>
+</script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
 </head>
 <style>
-	body {
-		font-family: 'Roboto', sans-serif;
-		max-width:320px;
-		margin:0 auto;
-		background-color:#f8f9fa;
-	}
-	label {
-		text-transform:uppercase;
-		font-weight:500;
-		font-size:12px;
-		display:block;
-		width:100%;
-		margin-bottom:12px;
-	}
-	input {
-		width:288px;
-		display:block;
-		margin-bottom:12px;
-		outline:none;
-		background-color:white;
-		border-radius: 32px;
-   		 padding: 12px 18px;
-	-webkit-appearance: none;
-	box-shadow:none;
-	outline:none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	border-style:solid;
-	border-size:0px;
-	border-color:#f2f4f7;
-	}
+    body {
+        font-family: 'Roboto', sans-serif;
+        max-width:320px;
+        margin:0 auto;
+        background-color:#f8f9fa;
+    }
+    label {
+        text-transform:uppercase;
+        font-weight:500;
+        font-size:12px;
+        display:block;
+        width:100%;
+        margin-bottom:12px;
+    }
+    /*
+    input {
+        width:288px;
+        display:block;
+        margin-bottom:12px;
+        outline:none;
+        background-color:white;
+        border-radius: 32px;
+         padding: 12px 18px;
+    -webkit-appearance: none;
+    box-shadow:none;
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-style:solid;
+    border-size:0px;
+    border-color:#f2f4f7;
+    }
+    */
 input[type=button], input[type=submit], input[type=reset] {
   background-color: #ff3366;
   border: none;
@@ -66,17 +89,17 @@ input[type=button], input[type=submit], input[type=reset] {
   cursor: pointer;
 }
 .logo {
-	text-align:center;
-	margin:0 auto;
-	margin-top:12px;
-	margin-bottom:12px;
+    text-align:center;
+    margin:0 auto;
+    margin-top:12px;
+    margin-bottom:12px;
 }
 .logo img {
-	margin:0 auto;
-	width:120px;
+    margin:0 auto;
+    width:120px;
 }
 h2 {
-	text-align:center;
+    text-align:center;
 }
 p {
         font-size: 14px;
@@ -90,9 +113,9 @@ span {
 }
 </style>
 <body>
-	<div class="logo">
-		<img src="https://a.cldcvr.com/cldcvr/CLDCVR-RGB-Text-Black.png">
-	</div>
+    <div class="logo">
+        <img src="https://a.cldcvr.com/cldcvr/CLDCVR-RGB-Text-Black.png">
+    </div>
     <h2>Download our Data Lake Solution Brief</h2>
     <p>Have a look at our AWS Data Lake Solution - We just need some information from you before you can download the file.</p>
     <div>
@@ -103,8 +126,10 @@ span {
                 window.location = re.exec(window.location.pathname)[0] + 'pdf.html';
         }">
     </iframe>
-    <form name="register" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScOpaoOLdKyUUc-xTlWjq5_ww_ZerM7NQwljavAz4ehpMPQxw/formResponse"
-        method="post" target="hidden_iframe" onsubmit="return validateForm();">
+
+    <form name="register" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSd8aZygyXBfFSeuaKhiQ1NQbW2e--0quM7h2aSR3kM2Syse0Q/formResponse"
+        method="POST" target="hidden_iframe" onsubmit="return validateForm();">
+    
         <label>Company Name</label>
         <input type="text"
             class="quantumWizTextinputPaperinputInput exportInput"
@@ -112,8 +137,8 @@ span {
             autocomplete="off"
             tabindex="0"
             aria-label="Company Name"
-            aria-describedby="i.desc.2038210276 i.err.2038210276"
-            name="entry.1573088329"
+            aria-describedby="i.desc.795646101 i.err.795646101"
+            name="entry.1747700737"
             value=""
             required=""
             dir="auto"
@@ -121,6 +146,7 @@ span {
             data-initial-value=""
             aria-invalid="true">
         <br>
+
         <label>Email</label>
         <input type="email"
             class="quantumWizTextinputPaperinputInput exportInput"
@@ -128,8 +154,8 @@ span {
             autocomplete="off"
             tabindex="0"
             aria-label="Email"
-            aria-describedby="i.desc.908255338 i.err.908255338"
-            name="entry.1042885748"
+            aria-describedby="i.desc.168851754 i.err.168851754"
+            name="entry.1698234232"
             value=""
             required=""
             dir="auto"
@@ -137,6 +163,7 @@ span {
             data-initial-value=""
             aria-invalid="true">
         <br>
+
         <label>Phone No <span>OPTIONAL</span></label>
         <input type="text"
             class="quantumWizTextinputPaperinputInput exportInput"
@@ -144,16 +171,32 @@ span {
             autocomplete="off"
             tabindex="0"
             aria-label="Phone"
-            aria-describedby="i.desc.652213266 i.err.652213266"
-            name="entry.268339329"
+            aria-describedby="i.desc.2145071809 i.err.2145071809"
+            name="entry.1014546229"
             value=""
             dir="auto"
             data-initial-dir="auto"
             data-initial-value=""
             aria-invalid="false">
+
+        <input type="hidden"
+            class="quantumWizTextinputPaperinputInput exportInput"
+            jsname="YPqjbf" autocomplete="off" tabindex="0" aria-label="Contact Status"
+            aria-describedby="i.desc.551584983 i.err.551584983"
+            name="entry.545882902"
+            dir="auto"
+            data-initial-dir="auto"
+            data-initial-value=""
+            aria-invalid="false">
+    
+        <label>
+            <input type="checkbox" id="1234" name="dndCheckBox" jsname="ekGZBc" onclick="checkContact(this)" />
+            <span> dont want to be contacted </span>
+        </label>
         <br>
         <input class="btn" type="submit" value="Submit" />
     </form>
+
     <br>
     <br>
 </div>
